@@ -1,4 +1,4 @@
-package com.oem.OnlineExamPortal.model.entity;
+package com.oep.OnlineExamPortal.model.dto;
 
 import lombok.Data;
 

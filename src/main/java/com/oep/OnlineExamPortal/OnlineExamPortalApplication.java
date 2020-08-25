@@ -1,4 +1,4 @@
-package com.oem.OnlineExamPortal;
+package com.oep.OnlineExamPortal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
