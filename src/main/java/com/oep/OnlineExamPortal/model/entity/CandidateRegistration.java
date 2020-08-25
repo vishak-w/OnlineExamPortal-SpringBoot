@@ -15,31 +15,34 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 @Entity
 @Data
-@Table(name="CandidateRegistration")
+@Table(name = "CandidateRegistration")
 public class CandidateRegistration {
-	
 
 	@Id
 	@Column
-	@GeneratedValue(strategy =GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+
 	@Column
 	private String aadhar;
-	
-	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name="CandidateProfile_id")
+
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "CandidateProfile_id")
 	private CandidateProfile candidateProfile;
-	
-	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name="address_id")
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
 	private List<CandidateAddress> candidateAddress;
-	
-	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name="candidateQDetails_id")
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "candidateQDetails_id")
 	private List<CandidateQualificationDetails> candidateQDetails;
-	
+
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "credential_id")
+	private LoginCredentials loginCredentials;
 
 }
