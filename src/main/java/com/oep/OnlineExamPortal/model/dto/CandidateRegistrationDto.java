@@ -12,9 +12,10 @@ public class CandidateRegistrationDto {
 	private Integer id;
 
 	private String aadhar;
-	private CandidateProfileDto CandidateProfile;
+	private CandidateProfileDto candidateProfile;
 	private List<CandidateAddressDto> candidateAddress;
 	private List<CandidateQualificationDetailsDto> candidateQDetails;
+	private LoginCredentialsDto loginDetails;
 	
 
 }

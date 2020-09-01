@@ -1,6 +1,5 @@
-package com.oep.OnlineExamPortal.security.configurations;
 /*
- * package com.oem.OnlineExamPortal.security.configurations;
+ * package com.oep.OnlineExamPortal.security.configurations;
  * 
  * import java.io.IOException; import java.io.Serializable;
  * 

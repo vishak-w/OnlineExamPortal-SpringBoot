@@ -1,10 +1,9 @@
-package com.oep.OnlineExamPortal.security.configurations;
 /*
- * package com.oem.OnlineExamPortal.security.configurations;
+ * package com.oep.OnlineExamPortal.security.configurations;
  * 
  * import java.io.IOException;
  * 
- * import javax.servlet.FilterChain;? import javax.servlet.ServletException;
+ * import javax.servlet.FilterChain; import javax.servlet.ServletException;
  * import javax.servlet.http.HttpServletRequest; import
  * javax.servlet.http.HttpServletResponse;
  * 
@@ -18,7 +17,7 @@ package com.oep.OnlineExamPortal.security.configurations;
  * org.springframework.stereotype.Component; import
  * org.springframework.web.filter.OncePerRequestFilter;
  * 
- * import com.jwt.service.JwtUserDetailsService;
+ * import com.oep.OnlineExamPortal.services.impl.JwtUserDetailsService;
  * 
  * import io.jsonwebtoken.ExpiredJwtException;
  * 

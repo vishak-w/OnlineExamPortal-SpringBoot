@@ -44,5 +44,8 @@ public class CandidateRegistration {
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "credential_id")
 	private LoginCredentials loginCredentials;
+	
+
+	
 
 }
