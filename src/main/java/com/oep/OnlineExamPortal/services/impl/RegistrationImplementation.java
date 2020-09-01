@@ -29,19 +29,20 @@ public class RegistrationImplementation implements RgistrationServices {
 	// CandidateRegistrationDto registrationDto = new CandidateRegistrationDto();
 
 	ModelMapper mapper = new ModelMapper();
-	LoginCredentials cred = new LoginCredentials();
-	LoginCredentialsDto ldto=new LoginCredentialsDto();
-	CandidateRegistration registration = new CandidateRegistration();
 
 	public void addUser(CandidateRegistrationDto registrationDto) {
-		//LoginCredentialsDto login = new LoginCredentialsDto();
-		
-		log.info("getting password from lofin dto..."+registrationDto.getLoginDetails().getPassword());
+		// LoginCredentialsDto login = new LoginCredentialsDto();
+		LoginCredentials cred = new LoginCredentials();
+		LoginCredentialsDto ldto = new LoginCredentialsDto();
+		CandidateRegistration registration = new CandidateRegistration();
+
+		log.info("getting password from lofin dto..." + registrationDto.getLoginDetails().getPassword());
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-		String pass=bcryptEncoder.encode(registrationDto.getLoginDetails().getPassword());
-		log.info("Expected Encrypted password"+pass);
-		cred.setPassword(pass);
-		//registration.setLoginCredentials(cred);
+		String pass = bcryptEncoder.encode(registrationDto.getLoginDetails().getPassword());
+		log.info("Expected Encrypted password" + pass);
+		ldto.setPassword(pass);
+		ldto.setUserName(registrationDto.getLoginDetails().getUserName());
+		registrationDto.setLoginDetails(ldto);
 		mapper.map(registrationDto, registration);
 		log.info(registrationDto.toString());
 

@@ -16,14 +16,14 @@ import com.oep.OnlineExamPortal.model.dto.CandidateRegistrationDto;
 import com.oep.OnlineExamPortal.model.entity.CandidateRegistration;
 import com.oep.OnlineExamPortal.services.impl.RegistrationImplementation;
 
-//@RequestMapping(value = "oep")
+@RequestMapping(value = "oep")
 @RestController
 public class RegistrationController {
 
 	@Autowired
 	RegistrationImplementation registrationImplementation;
 
-	@RequestMapping(value = "/register")
+	@PostMapping(value = "/register")
 	void registerCandidate(@RequestBody CandidateRegistrationDto registrationDto) {
 		registrationImplementation.addUser(registrationDto);
 
