@@ -23,7 +23,7 @@ public class RegistrationController {
 	@Autowired
 	RegistrationImplementation registrationImplementation;
 
-	@PostMapping(value = "/register")
+	@PostMapping(value = "/register", consumes = { "application/json" }, produces = { "application/json" })
 	void registerCandidate(@RequestBody CandidateRegistrationDto registrationDto) {
 		registrationImplementation.addUser(registrationDto);
 

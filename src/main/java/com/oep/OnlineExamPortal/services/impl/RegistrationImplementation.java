@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -49,6 +50,7 @@ public class RegistrationImplementation implements RgistrationServices {
 		examRepository.save(registration);
 	}
 
+	@Cacheable(value = "all_candidate", key = "user")
 	public List<CandidateRegistrationDto> getAllCandidate() {
 		CandidateRegistrationDto registrationDto = new CandidateRegistrationDto();
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
